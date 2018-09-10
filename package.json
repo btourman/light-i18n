@@ -1,0 +1,19 @@
+{
+  "name": "light-i18n",
+  "version": "1.0.0",
+  "description": "Lightweight i18n",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/btourman/light-i18n.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/btourman/light-i18n/issues"
+  },
+  "homepage": "https://github.com/btourman/light-i18n#readme"
+}
