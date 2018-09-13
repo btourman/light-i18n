@@ -87,7 +87,7 @@ var clear = function () {
 }
 
 module.exports = {
-    get: (name) => jsonObj[name],
+    get: (name) => name.split('.').reduce((acc, n) => acc[n], jsonObj),
     addLang: register,
     init: init,
     clear: clear
