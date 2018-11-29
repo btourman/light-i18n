@@ -50,11 +50,17 @@ if (!Array.prototype.find) {
 
 
 var foundLang = function (jsonObj, lang) {
-    var t = jsonObj.find(el => el.lang[0] === lang[0] && el.lang[1] === lang[1])
-    if (t)
+    var t = jsonObj.find(function (el) {
+        return el.lang[0] === lang[0] && el.lang[1] === lang[1]
+    })
+    if (t) {
         return t
-    else
-        return jsonObj.find(el => el.lang[0] === lang[0])
+    }
+    else {
+        return jsonObj.find(function (el) {
+            return el.lang[0] === lang[0]
+        })
+    }
 }
 
 
@@ -69,7 +75,9 @@ var init = function () {
     var userLg = (navigator.language || navigator.userLanguage).match(/([A-z]){2}/g);
     jsonObj = function () {
         var jsonlg = foundLang(jsonArr, userLg)
-        var defaut = jsonArr.find((element) => element.lang === "default")
+        var defaut = jsonArr.find(function (element) {
+            return element.lang === "default"
+        })
         if (!!jsonlg) {
             return jsonlg.json
         }
@@ -86,8 +94,14 @@ var clear = function () {
     jsonObj = {}
 }
 
+var get = function (name) {
+    return name.split('.').reduce(function (acc, n) {
+        return acc[n], jsonObj
+    })
+}
+
 module.exports = {
-    get: (name) => name.split('.').reduce((acc, n) => acc[n], jsonObj),
+    get: get,
     addLang: register,
     init: init,
     clear: clear
