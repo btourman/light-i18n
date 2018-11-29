@@ -50,7 +50,7 @@ if (!Array.prototype.find) {
 
 
 var foundLang = function (jsonObj, lang) {
-    const t = jsonObj.find(el => el.lang[0] === lang[0] && el.lang[1] === lang[1])
+    var t = jsonObj.find(el => el.lang[0] === lang[0] && el.lang[1] === lang[1])
     if (t)
         return t
     else
