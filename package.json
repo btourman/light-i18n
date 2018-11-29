@@ -1,6 +1,6 @@
 {
   "name": "light-i18n",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Lightweight i18n",
   "main": "index.js",
   "scripts": {

@@ -96,8 +96,8 @@ var clear = function () {
 
 var get = function (name) {
     return name.split('.').reduce(function (acc, n) {
-        return acc[n], jsonObj
-    })
+        return acc[n]
+    }, jsonObj)
 }
 
 module.exports = {
